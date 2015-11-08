@@ -30,6 +30,12 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+  def parents_home
+    @items = Item.all
+  end
+  def students_home
+    @items = Item.all
+  end
   private
   def item_params
     params.require(:item).permit(:name, :description, :color)
