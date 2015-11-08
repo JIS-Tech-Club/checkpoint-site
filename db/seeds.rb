@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Item.delete_all
+items = Item.create([{name: 'Sweater', description: 'GAP logo',color:'#fff000'}])
