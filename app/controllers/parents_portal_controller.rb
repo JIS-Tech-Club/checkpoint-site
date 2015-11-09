@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class ParentsPortalController < ApplicationController
   def new
     @item = Item.new
   end

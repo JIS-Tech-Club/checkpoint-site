@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'parents_portal/index' => 'parents_portal#index'
+
+  get 'parents_portal/new'
+
+  get 'parents_portal/show'
+
+  get 'student_portal/index' => 'student_portal#index'
+
+  get 'student_portal/new'
+
+  get '/search' => 'student_portal#search'
+
   get 'home/index'
-  get 'items/parents_home' => 'items#parents_home'
   resources :items
+  resources :parents_portal
+  resources :student_portal
 
   root 'home#index'
 
