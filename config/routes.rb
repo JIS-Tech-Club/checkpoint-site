@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'parents_portal/index' => 'parents_portal#index'
 
   get 'parents_portal/new'
@@ -17,6 +21,12 @@ Rails.application.routes.draw do
   resources :parents_portal
   resources :student_portal
 
+    get 'auth/:provider/callback', to: 'sessions#create'
+    get 'auth/failure', to: redirect('/')
+    get 'signout', to: 'sessions#destroy', as: 'signout'
+
+    resources :sessions, only: [:create, :destroy]
+    resource :home, only: [:show]
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
