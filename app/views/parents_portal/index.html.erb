@@ -1,6 +1,12 @@
 <h1>Welcome, parents!</h1>
+<%= form_tag parents_portal_index_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 <h2> Found Items: </h2>
-<% @items.each do |item| %>
+<% @foundItems.each do |item| %>
 <!-- @items= varable, .each do means do the code below for all the thing in items -->
 <h4> <%= link_to "#{item.name}", item %></h4>
 <ul>
