@@ -24,7 +24,7 @@ class ParentsPortalController < ApplicationController
     @search = Item.search do
       fulltext params[:search]
     end
-    if @search.results 
+    if @search.results
       @foundItems = @search.results
     else
       @foundItems = Item.all

@@ -1,7 +1,6 @@
 class Item < ActiveRecord::Base
   searchable do
-    text :name, :description
-
+    text :name, :description, :color
   end
 
 end

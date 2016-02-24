@@ -1,8 +1,8 @@
 <h1>StudentPortal#index</h1>
 <p>Find me in app/views/student_portal/index.html.erb</p>
-<%= render :partial search %>
+<%= render "shared/search", :pagePath => student_portal_index_path %>
 <h2>all found items </h2>
-<% @items.each do |item| %>
+<% @foundItems.each do |item| %>
 <h4> <%= link_to "#{item.name}", item %></h4>
 <ul>
   <li> <%= item.description %> </li>
