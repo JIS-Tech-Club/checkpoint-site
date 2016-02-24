@@ -2,8 +2,9 @@
 <p>Find me in app/views/student_portal/index.html.erb</p>
 <%= render "shared/search", :pagePath => student_portal_index_path %>
 <h2>all found items </h2>
-<% @foundItems.each do |item| %>
-<h4> <%= link_to "#{item.name}", item %><%= formattedDate(item.created_at)%></h4>
+
+<% sortByDate(@foundItems).reverse!.each do |item| %>
+<h4> <%= link_to "#{item.name}", item %> <%= formattedDate(item.created_at)%></h4>
 <ul>
   <li> <%= item.description %> </li>
 

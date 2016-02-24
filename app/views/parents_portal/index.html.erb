@@ -1,7 +1,7 @@
 <h1>Welcome, parents!</h1>
 <%= render "shared/search", :pagePath => parents_portal_index_path %>
 <h2> Found Items: </h2>
-<% @foundItems.each do |item| %>
+<% sortByDate(@foundItems).reverse!.each do |item| %>
 <!-- @items= varable, .each do means do the code below for all the thing in items -->
 <h4> <%= link_to "#{item.name}", item %> <%= formattedDate(item.created_at) %></h4>
 <ul>
